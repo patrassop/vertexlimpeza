@@ -1,0 +1,1572 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Distribuidora | Materiais de Limpeza</title>
+
+<meta name="description" content="Catálogo online de materiais de limpeza. Faça seu pedido pelo WhatsApp.">
+
+<style>
+:root {
+    --primary: #087b63;
+    --dark: #075442;
+    --light: #eaf7f2;
+    --orange: #f39b35;
+    --text: #24332e;
+    --muted: #718078;
+    --bg: #f6f9f7;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+button, input, select, textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* CABEÇALHO */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px #0000000c;
+}
+
+.topbar {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 12px;
+}
+
+.nav {
+    max-width: 1200px;
+    margin: auto;
+    padding: 12px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 190px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+.cart-button {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 13px 18px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.cart-button span {
+    background: white;
+    color: var(--primary);
+    border-radius: 20px;
+    padding: 4px 8px;
+    margin-left: 5px;
+}
+
+/* BANNER PRINCIPAL */
+
+.hero {
+    background: linear-gradient(120deg, #064e40, #09846a);
+    color: white;
+    padding: 70px 22px;
+}
+
+.hero-content {
+    max-width: 1150px;
+    margin: auto;
+}
+
+.hero h1 {
+    font-size: clamp(30px, 5vw, 48px);
+    max-width: 680px;
+    line-height: 1.15;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    color: #d9eee7;
+    max-width: 570px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.hero-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    background: var(--orange);
+    color: #17352d;
+    text-decoration: none;
+    padding: 15px 23px;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 15px;
+    box-shadow: 0 5px 16px #00000020;
+    transition: .2s;
+}
+
+.hero-cta:hover {
+    background: #ffad4d;
+    transform: translateY(-2px);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+#catalogo {
+    scroll-margin-top: 115px;
+}
+
+.hero-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 25px;
+}
+
+.hero-info span {
+    background: #ffffff20;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 13px;
+}
+
+/* CONTEÚDO */
+
+main {
+    max-width: 1200px;
+    margin: auto;
+    padding: 42px 22px 70px;
+}
+
+.section-title {
+    margin-bottom: 22px;
+}
+
+.section-title h2 {
+    font-size: 27px;
+}
+
+.section-title p {
+    color: var(--muted);
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+/* PESQUISA */
+
+.toolbar {
+    margin-bottom: 18px;
+}
+
+.search {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #dce7e1;
+    border-radius: 10px;
+    outline: none;
+    background: white;
+}
+
+.search:focus {
+    border-color: var(--primary);
+}
+
+/* CATEGORIAS */
+
+.filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-bottom: 28px;
+}
+
+.filter {
+    padding: 10px 15px;
+    border: 1px solid #dce7e1;
+    border-radius: 30px;
+    background: white;
+    color: var(--text);
+    font-size: 13px;
+}
+
+.filter.active {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+/* PRODUTOS */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #e9efeb;
+    border-radius: 14px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    transition: .2s;
+}
+
+.product:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 9px 25px #0000000b;
+}
+
+.product-image {
+    width: 100%;
+    height: 175px;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    margin-bottom: 14px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 7px;
+    transition: transform .3s;
+}
+
+.product:hover .product-image img {
+    transform: scale(1.05);
+}
+
+.brand {
+    color: var(--primary);
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    margin-bottom: 8px;
+}
+
+.product h3 {
+    font-size: 14px;
+    line-height: 1.5;
+    min-height: 42px;
+}
+
+.product small {
+    color: var(--muted);
+    margin-top: 6px;
+    font-size: 11px;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 7px;
+    margin-top: auto;
+    padding-top: 16px;
+}
+
+.price {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--dark);
+}
+
+.add {
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.add:hover {
+    background: var(--dark);
+}
+
+.empty {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 40px;
+    color: var(--muted);
+}
+
+/* CARRINHO */
+
+.cart-section {
+    margin-top: 55px;
+    background: white;
+    border: 1px solid #e6eee9;
+    border-radius: 16px;
+    padding: 25px;
+}
+
+.cart-section h2 {
+    margin-bottom: 18px;
+}
+
+.cart-empty {
+    text-align: center;
+    color: var(--muted);
+    padding: 25px 0;
+}
+
+.cart-row {
+    display: grid;
+    grid-template-columns: 1fr auto auto auto;
+    gap: 15px;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #edf1ee;
+}
+
+.cart-row strong {
+    font-size: 13px;
+}
+
+.cart-row small {
+    display: block;
+    color: var(--muted);
+    margin-top: 5px;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity button {
+    width: 29px;
+    height: 29px;
+    border: 1px solid #dce7e1;
+    background: white;
+    border-radius: 7px;
+}
+
+.remove {
+    border: none;
+    background: transparent;
+    color: #cf5656;
+    font-size: 12px;
+}
+
+.cart-summary {
+    max-width: 430px;
+    margin: 22px 0 0 auto;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.summary-line.total {
+    color: var(--dark);
+    font-size: 21px;
+    font-weight: 800;
+    border-top: 1px solid #e7eee9;
+    margin-top: 8px;
+    padding-top: 17px;
+}
+
+.discount-line {
+    color: var(--primary);
+}
+
+/* FINALIZAÇÃO */
+
+.checkout {
+    margin-top: 27px;
+    padding-top: 23px;
+    border-top: 1px solid #edf1ee;
+}
+
+.checkout h3 {
+    margin-bottom: 17px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.field.full {
+    grid-column: 1/-1;
+}
+
+.field label {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.field input,
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #dce7e1;
+    border-radius: 8px;
+    outline: none;
+    background: white;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--primary);
+}
+
+.notice {
+    background: #fff7e9;
+    border: 1px solid #f4e2c3;
+    padding: 15px;
+    border-radius: 9px;
+    color: #815b22;
+    font-size: 12px;
+    margin-top: 18px;
+    line-height: 1.7;
+}
+
+.whatsapp {
+    background: #1ba85b;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 17px;
+    border-radius: 10px;
+    margin-top: 18px;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.whatsapp:hover {
+    background: #128548;
+}
+
+/* VANTAGENS */
+
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.benefit {
+    background: white;
+    border: 1px solid #e9efeb;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.benefit .icon {
+    font-size: 28px;
+}
+
+.benefit b {
+    display: block;
+    margin: 10px 0 6px;
+}
+
+.benefit p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* RODAPÉ */
+
+footer {
+    background: #073e34;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 13px;
+    line-height: 1.9;
+}
+
+footer p {
+    color: #c7ded5;
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width: 900px) {
+    .products {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media(max-width: 620px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .product {
+        padding: 10px;
+    }
+
+    .product-image {
+        height: 125px;
+    }
+
+    .product h3 {
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 15px;
+    }
+
+    .add {
+        padding: 9px 8px;
+        font-size: 10px;
+    }
+
+    .hero {
+        padding: 48px 20px;
+    }
+
+    main {
+        padding: 30px 13px 55px;
+    }
+
+    .cart-section {
+        padding: 15px;
+    }
+
+    .cart-row {
+        grid-template-columns: 1fr auto;
+        gap: 9px;
+    }
+
+    .cart-row .quantity {
+        grid-column: 1;
+    }
+
+    .cart-row .row-total {
+        grid-column: 2;
+        grid-row: 2;
+    }
+
+    .cart-row .remove {
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .field.full {
+        grid-column: auto;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .logo img {
+        width: 145px;
+        height: 55px;
+    }
+
+    .cart-button {
+        padding: 10px;
+        font-size: 12px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- CABEÇALHO -->
+
+<header>
+    <div class="topbar">
+        🚚 Entrega em até 72 horas em toda a região Sul Fluminense do RJ
+    </div>
+
+    <div class="nav">
+
+        <div class="logo">
+            <img src="imagens/logo2.png" alt="Logo da empresa">
+        </div>
+
+        <button class="cart-button" onclick="goCart()">
+            🛒 Carrinho
+            <span id="cart-count">0</span>
+        </button>
+
+    </div>
+</header>
+
+<!-- BANNER -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Limpeza e economia para o seu dia a dia.</h1>
+
+        <p>
+            Encontre produtos de qualidade para sua casa,
+            empresa ou instituição. Escolha seus produtos,
+            monte seu carrinho e faça seu pedido diretamente
+            pelo WhatsApp.
+        </p>
+
+        <div class="hero-actions">
+            <a class="hero-cta" href="#catalogo">
+                🧾 FAÇA SEU ORÇAMENTO
+            </a>
+        </div>
+
+        <div class="hero-info">
+            <span>✓ Pedido mínimo: R$ 55,00</span>
+            <span>✓ Entrega em até 72 horas</span>
+            <span>✓ Pix ou boleto</span>
+        </div>
+
+    </div>
+
+</section>
+
+<main>
+
+<!-- CATÁLOGO -->
+
+<section id="catalogo">
+
+    <div class="section-title">
+        <h2>Nosso catálogo</h2>
+        <p>Confira nossos produtos e adicione ao seu carrinho.</p>
+    </div>
+
+    <div class="toolbar">
+        <input
+            type="text"
+            class="search"
+            id="search"
+            placeholder="🔎 Pesquisar produto..."
+            oninput="renderProducts()"
+        >
+    </div>
+
+    <div class="filters">
+
+        <button class="filter active" onclick="setCategory('Todos',this)">
+            Todos
+        </button>
+
+        <button class="filter" onclick="setCategory('Sabonetes',this)">
+            Sabonetes
+        </button>
+
+        <button class="filter" onclick="setCategory('Limpeza geral',this)">
+            Limpeza geral
+        </button>
+
+        <button class="filter" onclick="setCategory('Lavanderia',this)">
+            Lavanderia
+        </button>
+
+        <button class="filter" onclick="setCategory('Uso geral',this)">
+            Uso geral
+        </button>
+
+        <button class="filter" onclick="setCategory('Luvas',this)">
+            Luvas
+        </button>
+
+        <button class="filter" onclick="setCategory('Álcool',this)">
+            Álcool
+        </button>
+
+        <button class="filter" onclick="setCategory('Acessórios',this)">
+            Acessórios
+        </button>
+
+    </div>
+
+    <div class="products" id="products"></div>
+
+</section>
+
+<!-- CARRINHO -->
+
+<section class="cart-section" id="cart">
+
+    <h2>🛒 Meu carrinho de compras</h2>
+
+    <div id="cart-items" class="cart-empty">
+        Seu carrinho está vazio. Adicione produtos para começar!
+    </div>
+
+    <div class="cart-summary" id="summary" style="display:none">
+
+        <div class="summary-line">
+            <span>Subtotal</span>
+            <strong id="subtotal">R$ 0,00</strong>
+        </div>
+
+        <div class="summary-line discount-line" id="discount-row">
+            <span>Desconto Pix (3%)</span>
+            <strong id="discount">R$ 0,00</strong>
+        </div>
+
+        <div class="summary-line total">
+            <span>Total</span>
+            <span id="total">R$ 0,00</span>
+        </div>
+
+        <div class="summary-line">
+            <span>Pedido mínimo</span>
+            <strong>R$ 55,00</strong>
+        </div>
+
+    </div>
+
+    <!-- DADOS DO CLIENTE -->
+
+    <div class="checkout">
+
+        <h3>📋 Dados para o pedido</h3>
+
+        <div class="form-grid">
+
+            <div class="field">
+                <label>Nome / Empresa *</label>
+                <input id="customer" placeholder="Seu nome completo">
+            </div>
+
+            <div class="field">
+                <label>Telefone *</label>
+                <input id="phone" placeholder="(24) 99999-9999">
+            </div>
+
+            <div class="field">
+                <label>Cidade *</label>
+                <input id="city" placeholder="Sua cidade">
+            </div>
+
+            <div class="field">
+                <label>Forma de pagamento *</label>
+
+                <select id="payment" onchange="updateCart()">
+                    <option value="Pix">Pix - 3% de desconto</option>
+                    <option value="Boleto">Boleto - 7 dias</option>
+                </select>
+
+            </div>
+
+            <div class="field full">
+                <label>Endereço de entrega *</label>
+                <input id="address" placeholder="Rua, número, bairro e CEP">
+            </div>
+
+            <div class="field full">
+                <label>Observações</label>
+                <textarea
+                    id="notes"
+                    rows="3"
+                    placeholder="Informações adicionais sobre seu pedido..."
+                ></textarea>
+            </div>
+
+        </div>
+
+        <div class="notice">
+
+            <strong>Informações importantes:</strong>
+
+            <br>• Pedido mínimo de R$ 55,00.
+            <br>• Entrega direta em toda a região Sul Fluminense do RJ.
+            <br>• Prazo de entrega: até 72 horas.
+            <br>• Pix com desconto de 3%.
+            <br>• Boleto com prazo de 7 dias.
+
+        </div>
+
+        <button class="whatsapp" onclick="checkout()">
+            ☎ FINALIZAR PEDIDO PELO WHATSAPP
+        </button>
+
+    </div>
+
+</section>
+
+<!-- VANTAGENS -->
+
+<section class="benefits">
+
+    <div class="benefit">
+        <div class="icon">🚚</div>
+        <b>Entrega regional</b>
+        <p>Atendemos toda a região Sul Fluminense do Rio de Janeiro.</p>
+    </div>
+
+    <div class="benefit">
+        <div class="icon">⏱️</div>
+        <b>Agilidade</b>
+        <p>Prazo de entrega de até 72 horas.</p>
+    </div>
+
+    <div class="benefit">
+        <div class="icon">💳</div>
+        <b>Facilidade no pagamento</b>
+        <p>Pix com 3% de desconto ou boleto com prazo de 7 dias.</p>
+    </div>
+
+</section>
+
+</main>
+
+<!-- RODAPÉ -->
+
+<footer>
+
+    <strong>VERTEX DISTRIBUIDORA</strong>
+
+    <p>Qualidade, economia e praticidade para você.</p>
+
+    <p>Atendimento em toda a região Sul Fluminense - RJ</p>
+
+    <p>© 2026 - Desenvolvido por Vertex Soluções Tecnólogicas</p>
+
+</footer>
+
+<script>
+
+// ==========================================
+// CONFIGURAÇÃO DA LOJA
+// ==========================================
+
+// Coloque o WhatsApp oficial da empresa.
+// Formato: 55 + DDD + número
+
+const WHATSAPP = "5524992621456";
+
+// ==========================================
+// CADASTRO DE PRODUTOS
+// ==========================================
+
+const products = [
+
+    // TOPBEL - SABONETES
+
+    {
+        id: 1,
+        name: "Sabonete Líquido Erva Doce 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/1.png"
+    },
+
+    {
+        id: 2,
+        name: "Sabonete Líquido Lavanda 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/2.png"
+    },
+
+    {
+        id: 3,
+        name: "Sabonete Líquido Neutro 5 Litros",
+        brand: "TOPBEL",
+        category: "Sabonetes",
+        price: 17.17,
+        image: "imagens/3.png"
+    },
+
+    // TOPBEL - LIMPEZA GERAL
+
+    {
+        id: 4,
+        name: "Desinfetante Uso Geral Eucalipto 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/4.PNG"
+    },
+
+    {
+        id: 5,
+        name: "Desinfetante Uso Geral Pinho 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/5.png"
+    },
+
+    {
+        id: 6,
+        name: "Desinfetante Uso Geral Floral 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 10.00,
+        image: "imagens/6.png"
+    },
+
+    {
+        id: 7,
+        name: "Limpador Multiuso VEJA 500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 2.80,
+        image: "imagens/7.png"
+    },
+
+    {
+        id: 8,
+        name: "Limpador de Vidros 500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 2.80,
+        image: "imagens/8.png"
+    },
+
+    {
+        id: 9,
+        name: "Água Sanitária Galão 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 9.15,
+        image: "imagens/9.png"
+    },
+
+    {
+        id: 10,
+        name: "Desinfetante Hipoclorito (Cloro) 2,5% - 5 Litros",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 9.15,
+        image: "imagens/10.png"
+    },
+
+    {
+        id: 11,
+        name: "Álcool Gel 70% Fliptop 440g/500 ml",
+        brand: "TOPBEL",
+        category: "Limpeza geral",
+        price: 5.43,
+        image: "imagens/11.png"
+    },
+
+    // TOPBEL - LAVANDERIA
+
+    {
+        id: 12,
+        name: "Lava Roupas Líquido 5 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 19.50,
+        image: "imagens/122.png"
+    },
+
+    {
+        id: 13,
+        name: "Lava Roupas Líquido 2 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 12.40,
+        image: "imagens/13.png"
+    },
+
+    {
+        id: 14,
+        name: "Amaciante para Roupas 5 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 13.78,
+        image: "imagens/14.png"
+    },
+
+    {
+        id: 15,
+        name: "Amaciante para Roupas 2 Litros",
+        brand: "TOPBEL",
+        category: "Lavanderia",
+        price: 5.00,
+        image: "imagens/15.png"
+    },
+
+    // BARRA
+
+    {
+        id: 16,
+        name: "Detergente Neutro 500 ml",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 1.95,
+        image: "imagens/16.png"
+    },
+
+    {
+        id: 17,
+        name: "Sabão em Pó 800 g",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 4.79,
+        image: "imagens/17.png"
+    },
+
+    {
+        id: 18,
+        name: "Sabão em Pó 1,60 kg",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 7.39,
+        image: "imagens/18.png"
+    },
+
+    {
+        id: 19,
+        name: "Sabão Pastoso Pote 500 g",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 6.15,
+        image: "imagens/19.pNg"
+    },
+
+    {
+        id: 20,
+        name: "Sabão em Barra Glicerinado Pacote com 5 Barras",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 8.78,
+        image: "imagens/20.png"
+    },
+
+    {
+        id: 21,
+        name: "Limpador Multiuso VEJA 500 ml",
+        brand: "BARRA",
+        category: "Uso geral",
+        price: 2.80,
+        image: "imagens/21.png"
+    },
+
+    // MEDIX
+
+    {
+        id: 22,
+        name: "Luva de Limpeza Geral Emborrachada Tamanho G",
+        brand: "MEDIX",
+        category: "Luvas",
+        price: 2.28,
+        image: "imagens/22.png"
+    },
+
+    // CORDEX
+
+    {
+        id: 23,
+        name: "Álcool 70º - 1 Litro",
+        brand: "CORDEX",
+        category: "Álcool",
+        price: 6.98,
+        image: "imagens/23.png"
+    },
+
+    // OUTROS
+
+    {
+        id: 24,
+        name: "Esponja de Limpeza Dupla Face Brasileirinha",
+        brand: "OUTRAS MARCAS",
+        category: "Acessórios",
+        price: 0.74,
+        image: "imagens/24.png"
+    }
+
+];
+
+// ==========================================
+// FUNCIONAMENTO DO CATÁLOGO
+// ==========================================
+
+let cart = {};
+let activeCategory = "Todos";
+
+const money = value => value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL"
+});
+
+function renderProducts() {
+
+    const search = document
+        .getElementById("search")
+        .value.toLowerCase();
+
+    const list = products.filter(p => {
+
+        const matchesCategory =
+            activeCategory === "Todos" ||
+            p.category === activeCategory;
+
+        const matchesSearch =
+            (p.name + " " + p.brand)
+            .toLowerCase()
+            .includes(search);
+
+        return matchesCategory && matchesSearch;
+
+    });
+
+    const container = document.getElementById("products");
+
+    if (!list.length) {
+        container.innerHTML =
+            '<div class="empty">Nenhum produto encontrado.</div>';
+        return;
+    }
+
+    container.innerHTML = list.map(p => `
+
+        <article class="product">
+
+            <div class="product-image">
+
+                <img
+                    src="${p.image}"
+                    alt="${p.name}"
+                    loading="lazy"
+                    onerror="this.onerror=null;this.src='imagens/sem-foto.png';"
+                >
+
+            </div>
+
+            <span class="brand">${p.brand}</span>
+
+            <h3>${p.name}</h3>
+
+            <small>Venda por unidade / embalagem descrita</small>
+
+            <div class="product-bottom">
+
+                <span class="price">${money(p.price)}</span>
+
+                <button
+                    class="add"
+                    onclick="addToCart(${p.id})"
+                >
+                    + Adicionar
+                </button>
+
+            </div>
+
+        </article>
+
+    `).join("");
+
+}
+
+// ==========================================
+// FILTROS
+// ==========================================
+
+function setCategory(category, button) {
+
+    activeCategory = category;
+
+    document.querySelectorAll(".filter").forEach(b => {
+        b.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    renderProducts();
+
+}
+
+// ==========================================
+// CARRINHO
+// ==========================================
+
+function addToCart(id) {
+
+    cart[id] = (cart[id] || 0) + 1;
+
+    updateCart();
+
+}
+
+function changeQuantity(id, amount) {
+
+    cart[id] = (cart[id] || 0) + amount;
+
+    if (cart[id] <= 0) {
+        delete cart[id];
+    }
+
+    updateCart();
+
+}
+
+function removeItem(id) {
+
+    delete cart[id];
+
+    updateCart();
+
+}
+
+function getSubtotal() {
+
+    return Object.entries(cart).reduce((sum, [id, qty]) => {
+
+        const product = products.find(
+            p => p.id === Number(id)
+        );
+
+        return sum + product.price * qty;
+
+    }, 0);
+
+}
+
+// ==========================================
+// ATUALIZAÇÃO DO CARRINHO
+// ==========================================
+
+function updateCart() {
+
+    const container = document.getElementById("cart-items");
+
+    const entries = Object.entries(cart);
+
+    const count = entries.reduce(
+        (sum, item) => sum + item[1], 0
+    );
+
+    document.getElementById("cart-count").textContent = count;
+
+    if (!entries.length) {
+
+        container.className = "cart-empty";
+
+        container.innerHTML =
+            "Seu carrinho está vazio. Adicione produtos para começar!";
+
+        document.getElementById("summary").style.display = "none";
+
+        return;
+
+    }
+
+    container.className = "";
+
+    container.innerHTML = entries.map(([id, qty]) => {
+
+        const p = products.find(
+            item => item.id === Number(id)
+        );
+
+        return `
+
+            <div class="cart-row">
+
+                <div>
+                    <strong>${p.name}</strong>
+                    <small>${p.brand} · ${money(p.price)} cada</small>
+                </div>
+
+                <div class="quantity">
+
+                    <button onclick="changeQuantity(${p.id},-1)">
+                        −
+                    </button>
+
+                    <strong>${qty}</strong>
+
+                    <button onclick="changeQuantity(${p.id},1)">
+                        +
+                    </button>
+
+                </div>
+
+                <strong class="row-total">
+                    ${money(p.price * qty)}
+                </strong>
+
+                <button
+                    class="remove"
+                    onclick="removeItem(${p.id})"
+                >
+                    Remover
+                </button>
+
+            </div>
+
+        `;
+
+    }).join("");
+
+    document.getElementById("summary").style.display = "block";
+
+    const subtotal = getSubtotal();
+
+    const isPix =
+        document.getElementById("payment").value === "Pix";
+
+    const discount = isPix ? subtotal * 0.03 : 0;
+
+    const total = subtotal - discount;
+
+    document.getElementById("subtotal").textContent =
+        money(subtotal);
+
+    document.getElementById("discount").textContent =
+        "- " + money(discount);
+
+    document.getElementById("discount-row").style.display =
+        isPix ? "flex" : "none";
+
+    document.getElementById("total").textContent =
+        money(total);
+
+}
+
+// ==========================================
+// NAVEGAÇÃO ATÉ O CARRINHO
+// ==========================================
+
+function goCart() {
+
+    document.getElementById("cart").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+// ==========================================
+// FINALIZAÇÃO PELO WHATSAPP
+// ==========================================
+
+function checkout() {
+
+    const entries = Object.entries(cart);
+
+    if (!entries.length) {
+
+        alert("Adicione pelo menos um produto ao carrinho.");
+
+        return;
+
+    }
+
+    const subtotal = getSubtotal();
+
+    if (subtotal < 55) {
+
+        alert(
+            "O pedido mínimo é de R$ 55,00.\n" +
+            "Faltam " + money(55 - subtotal) +
+            " para atingir o mínimo."
+        );
+
+        return;
+
+    }
+
+    const customer =
+        document.getElementById("customer").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const city =
+        document.getElementById("city").value.trim();
+
+    const address =
+        document.getElementById("address").value.trim();
+
+    const payment =
+        document.getElementById("payment").value;
+
+    const notes =
+        document.getElementById("notes").value.trim();
+
+    if (!customer || !phone || !city || !address) {
+
+        alert(
+            "Preencha nome, telefone, cidade e endereço de entrega."
+        );
+
+        return;
+
+    }
+
+    const discount =
+        payment === "Pix" ? subtotal * 0.03 : 0;
+
+    const total = subtotal - discount;
+
+    let message = "";
+
+    message += "🛒 *NOVO PEDIDO - DISTRIBUIDORA DE LIMPEZA*\n";
+
+    message += "━━━━━━━━━━━━━━━━━━\n\n";
+
+    message += "*DADOS DO CLIENTE*\n";
+
+    message += "Nome: " + customer + "\n";
+
+    message += "Telefone: " + phone + "\n";
+
+    message += "Cidade: " + city + "\n";
+
+    message += "Endereço: " + address + "\n\n";
+
+    message += "*PRODUTOS DO PEDIDO*\n";
+
+    entries.forEach(([id, qty]) => {
+
+        const p = products.find(
+            item => item.id === Number(id)
+        );
+
+        message += "\n• " + p.name + "\n";
+
+        message += "Marca: " + p.brand + "\n";
+
+        message += "Quantidade: " + qty + "\n";
+
+        message += "Valor: " + money(p.price * qty) + "\n";
+
+    });
+
+    message += "\n━━━━━━━━━━━━━━━━━━\n";
+
+    message += "Subtotal: " + money(subtotal) + "\n";
+
+    if (discount > 0) {
+
+        message += "Desconto Pix (3%): - " +
+            money(discount) + "\n";
+
+    }
+
+    message += "*TOTAL: " + money(total) + "*\n";
+
+    message += "Pagamento: " + payment;
+
+    if (payment === "Boleto") {
+        message += " (prazo de 7 dias)";
+    }
+
+    message += "\n\n";
+
+    if (notes) {
+
+        message += "Observações: " + notes + "\n\n";
+
+    }
+
+    message += "Entrega: até 72 horas\n";
+
+    message += "Região: Sul Fluminense - RJ\n\n";
+
+    message += "Aguardo a confirmação do pedido. Obrigado!";
+
+    // Verifica configuração do telefone
+
+    if (!/^55\d{10,11}$/.test(WHATSAPP)) {
+
+        alert(
+            "Configure o número de WhatsApp da loja no código antes de finalizar."
+        );
+
+        return;
+
+    }
+
+    const url =
+        "https://wa.me/" +
+        WHATSAPP +
+        "?text=" +
+        encodeURIComponent(message);
+
+    window.open(url, "_blank");
+
+}
+
+// ==========================================
+// INICIALIZAÇÃO
+// ==========================================
+
+renderProducts();
+
+updateCart();
+
+</script>
+
+</body>
+</html>
